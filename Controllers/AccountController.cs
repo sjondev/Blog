@@ -15,34 +15,31 @@ namespace Blog.Controllers;
 public class AccountController : ControllerBase
 {
     // Criar o cadastro do utilizador 
-    [HttpPost("v1/account/")]
+     [HttpPost("v1/accounts/")]
     public async Task<IActionResult> Post(
-        [FromBody] RegisterViewModel model, 
-        [FromServices] BlogDataContext dataContext)
+        [FromBody] RegisterViewModel model,
+        [FromServices] BlogDataContext context,
+        [FromServices] EmailServices emailService)
     {
         if (!ModelState.IsValid)
-        {
             return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
-        }
 
-        var user = new User()
+        var user = new User
         {
             Name = model.Name,
             Email = model.Email,
             Slug = model.Email.Replace("@", "-").Replace(".", "-")
         };
-        
-        // aqui vamos gerar uma senha com o pacote que instalamos que se chama "SecureIdentity" 
-        // ele foi criado pela equipe balta.io para gerar senhas seguras antes de ser armazenadas no
-        // banco de dados.
-        var password = PasswordGenerator.Generate(25, true, true);
+
+        var password = PasswordGenerator.Generate(25);
         user.PasswordHash = PasswordHasher.Hash(password);
 
         try
         {
-            await dataContext.Users.AddAsync(user);
-            await dataContext.SaveChangesAsync();
+            await context.Users.AddAsync(user);
+            await context.SaveChangesAsync();
 
+            emailService.Send(user.Name, user.Email, "Bem vindo ao blog!", $"Sua senha é {password}");
             return Ok(new ResultViewModel<dynamic>(new
             {
                 user = user.Email, password
@@ -50,11 +47,11 @@ public class AccountController : ControllerBase
         }
         catch (DbUpdateException)
         {
-            return StatusCode(400, new ResultViewModel<string>("5x99 - Este Email já existe!"));
-        } 
+            return StatusCode(400, new ResultViewModel<string>("05X99 - Este E-mail já está cadastrado"));
+        }
         catch
         {
-            return StatusCode(500, new ResultViewModel<string>("5x99 - Error server!"));
+            return StatusCode(500, new ResultViewModel<string>("05X04 - Falha interna no servidor"));
         }
     }
     
@@ -90,9 +87,4 @@ public class AccountController : ControllerBase
             return StatusCode(500, new ResultViewModel<string>("5x04 - Error internal server!"));
         }
     }
-    
-    
-    
-    
-    
 }

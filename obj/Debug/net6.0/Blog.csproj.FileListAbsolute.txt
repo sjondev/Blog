@@ -5,7 +5,9 @@
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Blog.runtimeconfig.json
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Blog.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Blog.pdb
+/home/jondev/www/backend/Blog/bin/Debug/net6.0/BouncyCastle.Cryptography.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Humanizer.dll
+/home/jondev/www/backend/Blog/bin/Debug/net6.0/MailKit.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
@@ -32,6 +34,8 @@
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+/home/jondev/www/backend/Blog/bin/Debug/net6.0/MimeKit.dll
+/home/jondev/www/backend/Blog/bin/Debug/net6.0/SecureIdentity.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Drawing.Common.dll
@@ -42,6 +46,7 @@
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Security.Cryptography.Xml.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Security.Permissions.dll
+/home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Text.Encoding.CodePages.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Text.Encodings.Web.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/System.Windows.Extensions.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
@@ -56,6 +61,7 @@
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/jondev/www/backend/Blog/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
 /home/jondev/www/backend/Blog/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/Blog.csproj.AssemblyReference.cache
@@ -64,6 +70,7 @@
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/Blog.AssemblyInfo.cs
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/Blog.csproj.CoreCompileInputs.cache
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/Blog.MvcApplicationPartsAssemblyInfo.cache
+/home/jondev/www/backend/Blog/obj/Debug/net6.0/Blog.sourcelink.json
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/staticwebassets.build.json
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/staticwebassets.development.json
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/staticwebassets/msbuild.Blog.Microsoft.AspNetCore.StaticWebAssets.props
@@ -78,4 +85,3 @@
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/Blog.pdb
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/Blog.genruntimeconfig.cache
 /home/jondev/www/backend/Blog/obj/Debug/net6.0/ref/Blog.dll
-/home/jondev/www/backend/Blog/bin/Debug/net6.0/SecureIdentity.dll

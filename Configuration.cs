@@ -8,6 +8,7 @@ public class Configuration
     public static string ApiKey = "curso_api_IlTevUM/z0ey3NwCV/unWg==";
     public static SmtpConfiguration Smtp = new();
     
+    // Configuração do meu SMTP de envio de email
     public class SmtpConfiguration
     {
         public string Host { get; set; }
