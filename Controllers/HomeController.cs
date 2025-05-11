@@ -7,13 +7,6 @@ namespace Blog.Controllers;
 [Route("")]
 public class HomeController : ControllerBase
 {
-    // Health Check -> estou verificando se minha API está online.
-    /*[HttpGet("health-check")]
-    public IActionResult Get()
-    {
-        return Ok();
-    }*/
-    
     public IActionResult Get()
     {
         return Ok("ola mundo");

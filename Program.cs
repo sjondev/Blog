@@ -10,6 +10,7 @@ LoadConfigurationAuthentication(builder);
 LoadConfigureMvc(builder);
 LoadConfigureServices(builder);
 var app = builder.Build();
+// carregando o SMTP
 LoadConfiguration(app);
 LoadProject(app);
 
@@ -41,7 +42,7 @@ void LoadConfigureServices(WebApplicationBuilder builder)
 {
     builder.Services.AddDbContext<BlogDataContext>();
     builder.Services.AddTransient<TokenServices>();
-    builder.Services.AddTransient<EmailServices>();
+    builder.Services.AddTransient<LocalhostEmailService>();
 }
 void LoadConfiguration(WebApplication app)
 {
