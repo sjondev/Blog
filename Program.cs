@@ -10,7 +10,6 @@ LoadConfigurationAuthentication(builder);
 LoadConfigureMvc(builder);
 LoadConfigureServices(builder);
 var app = builder.Build();
-// carregando o SMTP
 LoadConfiguration(app);
 LoadProject(app);
 
@@ -60,6 +59,7 @@ void LoadProject(WebApplication app)
 {
     app.UseAuthentication();
     app.UseAuthorization();
+    app.UseStaticFiles();
     app.MapControllers();
     app.Run();
 }   

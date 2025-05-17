@@ -42,8 +42,8 @@ public class AccountController : ControllerBase
             await emailService.SendAsync(
                 "Enviado para o meu resend",
                 "<h1>subindo o Teste da minha maquina</h1>",
-                "delivered@resend.dev",
-                "resend"
+                user.Email, // "delivered@resend.dev"
+                user.Name // "resend"
                 );
             return Ok(new ResultViewModel<dynamic>(new
             {
