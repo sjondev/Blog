@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Blog.Data;
 using Blog.ModalStateExtansion;
 using Blog.Models;
@@ -91,5 +92,48 @@ public class AccountController : ControllerBase
         {
             return StatusCode(500, new ResultViewModel<string>("5x04 - Error internal server!"));
         }
+    }
+
+    [Authorize]
+    [HttpPost("v1/accounts/upload-image")]
+    public async Task<IActionResult> UploadImage(
+        [FromBody] UploadImageViewModel model,
+        [FromServices] BlogDataContext dataContext
+        )
+    {
+        var fileName = $"{Guid.NewGuid().ToString()}.jpg";
+        var data = new Regex(@"^data:image\/[a-z]+;base64,").Replace(model.Base64Image, "");
+        var bytes = Convert.FromBase64String(model.Base64Image);
+        // using var stream = new MemoryStream(bytes);
+
+        try
+        {
+            await System.IO.File.WriteAllBytesAsync($"wwwroot/images/{fileName}", bytes);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, new ResultViewModel<string>("5x04 - Error internal server!"));
+        }
+
+        var user = await dataContext
+                .Users
+                .FirstOrDefaultAsync(x => x.Email == User.Identity.Name);
+        
+        if (user == null) return NotFound(new ResultViewModel<Category>("User not found"));
+
+        user.Image = $"https://localhost:0000/images/{fileName}";
+
+        try
+        {
+            dataContext.Users.Update(user);
+            await dataContext.SaveChangesAsync();
+        }
+
+        catch (Exception e)
+        {
+            return StatusCode(500, new ResultViewModel<string>("5x04 - Error internal server!"));
+        }
+
+        return Ok(new ResultViewModel<string>("Image updated successfully"));
     }
 }
